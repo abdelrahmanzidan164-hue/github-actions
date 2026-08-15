@@ -46,4 +46,13 @@ jobs:
     #
     # - name: Build with Gradle 8.9
     #   run: gradle build
+    
+    # Docker 
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v7
+      with:
+        image: abdelrahmanzidan/demo
+        registry: docker.io
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
